@@ -1,0 +1,37 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.bg-1 {
+    background: #10437d
+}
+.bg-2 {
+    background:#0c60c0;
+}
+.bg-3 {
+    background: #2a9fd8;
+}
+.bg-4 {
+    background: #bb6546;
+}
+.bg-5 {
+    background: #6b301d;
+}
+
+a.list-group-item:hover {
+    color: black !important;
+}
+
+a.list-group-item:focus {
+    color: black !important;
+    font-weight: bold;
+}
+
+a.card-link:hover {
+    text-decoration: none;
+}
