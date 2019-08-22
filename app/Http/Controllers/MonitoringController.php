@@ -39,7 +39,21 @@ class MonitoringController extends Controller
 
     public function show($id)
     {
-        //
+
+        $ungrouped = Kpi::with('quarterly_performance')->get();
+
+        $blank = Performance::create([
+            "month" => "_blank",
+            "year" => "_blank",
+            "actual" => null,
+            "planned" => null,
+            "percentage" => null,
+            "kpi_id" => 0
+        ]);
+
+        $kpis = $ungrouped->groupBy('category');
+
+        return view('monitoring.quarterly', compact( 'kpis', 'blank' ) );
     }
 
     public function edit($id)

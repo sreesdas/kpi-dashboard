@@ -19,4 +19,8 @@ class Kpi extends Model
     public function roadmaps() {
         return $this->hasMany('App\Roadmap');
     }
+
+    public function quarterly_performance() {
+        return $this->hasMany('App\QuarterlyPerformance');
+    }
 }

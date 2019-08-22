@@ -18,6 +18,7 @@ class CreateKpisTable extends Migration
             $table->string('name');
             $table->string('tag'); // tag for context in chart.js and id of canvas (without spaces)
             $table->string('category');
+            $table->enum('performance', [ 'monthly', 'quarterly', 'halfyearly', 'yearly' ] );
             $table->string('unit')->nullable();
             $table->double('threshold')->nullable();
             $table->timestamps();

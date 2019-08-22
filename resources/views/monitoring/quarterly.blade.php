@@ -11,7 +11,7 @@
                     <span class="h6 mx-4">
                         <span>View By : </span>
                         <a class="mx-1" href="/monitoring">Monthly</a>
-                        <a class="mx-1" href="/monitoring/1">Quarterly</a>
+                        <a class="mx-1 font-weight-bold text-success" href="/monitoring/1" >Quarterly</a>
                         <a class="mx-1" href="#">Half Yearly</a>
                         <a class="mx-1" href="#">Annually</a>
                     </span>
@@ -26,19 +26,11 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th style="width: 20%">KPI</th>
-                        <th>Apr</th>
-                        <th>May</th>
-                        <th>Jun</th>
-                        <th>Jul</th>
-                        <th>Aug</th>
-                        <th>Sep</th>
-                        <th>Oct</th>
-                        <th>Nov</th>
-                        <th>Dec</th>
-                        <th>Jan</th>
-                        <th>Feb</th>
-                        <th>Mar</th>
+                        <th style="width: 30%">KPI</th>
+                        <th>Q1</th>
+                        <th>Q2</th>
+                        <th>Q3</th>
+                        <th>Q4</th>
                         <th>Total</th>
                     </tr>
 
@@ -53,19 +45,19 @@
                         @foreach ($set as $kpi)
                             <tr>
                                 <td> {{ $kpi->name }} </td>
-                                @foreach ($kpi->performance->pad( 12, $blank ) as $p )
-                                    @if( $p->percentage == null )
+                                @foreach ($kpi->quarterly_performance->pad( 4, $blank ) as $p )
+                                    @if( $p->actual == null )
                                         <td> {{ $p->actual }} </td>    
-                                    @elseif( $p->percentage >= 99)
+                                    @elseif( $p->actual / $p->planned >= 0.99)
                                         <td class="bg-100"> {{ $p->actual }} </td>    
-                                    @elseif( $p->percentage >= 50 )
+                                    @elseif( $p->actual / $p->planned >= 0.5 )
                                         <td class="bg-99"> {{ $p->actual }} </td>    
-                                    @elseif( $p->percentage > 0 )
+                                    @elseif( $p->actual / $p->planned > 0 )
                                         <td class="bg-50"> {{ $p->actual }} </td>    
                                     @endif
                                 @endforeach
 
-                                <td> {{ $kpi->performance->sum('actual') }} </td>
+                                <td> {{ $kpi->quarterly_performance->sum('actual') }} </td>
                             </tr>
                         @endforeach
 

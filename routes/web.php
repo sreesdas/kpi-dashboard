@@ -1,5 +1,7 @@
 <?php
-
+use App\Kpi;
+use App\Performance;
+use App\QuarterlyPerformance;
 
 Route::get('/', function () {
     return view('welcome');
@@ -10,6 +12,7 @@ Route::get('/dashboard/{id}', 'HomeController@show');
 Route::get('/dashboard/{id}/yearly', 'DashboardController@show');
 
 Route::get('/monitoring', 'MonitoringController@index' );
+Route::get('/monitoring/{id}', 'MonitoringController@show' );
 
 Auth::routes();
 

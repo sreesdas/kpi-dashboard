@@ -6,6 +6,7 @@ use App\Kpi;
 use App\Category;
 use App\Performance;
 use Illuminate\Http\Request;
+use App\QuarterlyPerformance;
 
 class PerformanceController extends Controller
 {
