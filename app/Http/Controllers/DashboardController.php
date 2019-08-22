@@ -33,7 +33,7 @@ class DashboardController extends Controller
         $category = Category::find($id);
         $kpis = Kpi::with('performance')->where('category', $category->name)->get();
 
-        return view('dashboard.index', compact('kpis') );
+        return view('dashboard.yearly', compact('kpis', 'id' ) );
     }
 
     public function edit($id)

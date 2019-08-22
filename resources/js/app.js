@@ -10,6 +10,10 @@ require('./mychart');
 const feather = require('feather-icons');
 feather.replace()
 
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
+
 // window.Vue = require('vue');
 
 /**

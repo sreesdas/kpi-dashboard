@@ -1,7 +1,7 @@
-@extends('layouts.app', [ "id" => $id ] )
+@extends('layouts.app')
 
 @section('content')
-
+    
 <div class="col-12">
     <div class="row">
         @foreach ($kpis as $kpi)
@@ -23,11 +23,12 @@
             </div>
         @endforeach
     </div>
-</div>
 
-<a href="/dashboard/{{$id}}/yearly" class="fab" data-toggle="tooltip" data-placement="top" title="Yearly Reports">
-    <i data-feather="map"></i>
-</a>
+    <a href="/dashboard/{{ $id }}" class="fab" data-toggle="tooltip" data-placement="top" title="Monthly Reports">
+        <i data-feather="bar-chart"></i>
+    </a>
+
+</div>
 
 <script>
 
@@ -37,26 +38,26 @@
     var {{ "chart_" . $kpi->tag }} = new Chart( {{ "ctx_" . $kpi->tag }}, {
         type: 'bar',
         data: {
-            labels: {!! $kpi->performance->pluck('month') !!},
+            labels: {!! $kpi->roadmaps->pluck('year') !!},
             datasets: [{
                 label: 'Planned',
-                data: {!! $kpi->performance->pluck('planned') !!},
+                data: {!! $kpi->roadmaps->pluck('planned') !!},
                 backgroundColor: [
-                    @foreach($kpi->performance as $performance) 'rgba(99, 133, 170, 0.9)', @endforeach
+                    @foreach($kpi->roadmaps as $roadmap) 'rgba(99, 133, 170, 0.9)', @endforeach
                 ],
                 borderColor: [
-                    @foreach($kpi->performance as $performance) 'rgba(99, 133, 170, 1)', @endforeach
+                    @foreach($kpi->roadmaps as $roadmap) 'rgba(99, 133, 170, 1)', @endforeach
                 ],
                 borderWidth: 1
             },
             {
                 label: 'Actual',
-                data: {!! $kpi->performance->pluck('actual') !!},
+                data: {!! $kpi->roadmaps->pluck('actual') !!},
                 backgroundColor: [
-                    @foreach($kpi->performance as $performance) 'rgba(255, 99, 132, 0.5)', @endforeach
+                    @foreach($kpi->roadmaps as $roadmap) 'rgba(255, 99, 132, 0.5)', @endforeach
                 ],
                 borderColor: [
-                    @foreach($kpi->performance as $performance) 'rgba(255, 99, 132, 1)', @endforeach  
+                    @foreach($kpi->roadmaps as $roadmap) 'rgba(255, 99, 132, 1)', @endforeach  
                 ],
                 borderWidth: 1
             }

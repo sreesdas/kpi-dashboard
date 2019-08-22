@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'KPI Dashboard') }}</title>
 
     <!-- Scripts -->
     <script src="/js/chart.min.js"></script>
@@ -23,9 +23,9 @@
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/home">
                 <img src="/img/ongc-logo.png" width="30" height="30" class="d-inline-block align-top mx-2" alt="">
-                {{ config('app.name', 'Laravel') }} 
+                {{ config('app.name', 'KPI Dashboard') }} 
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -72,7 +72,7 @@
         <main class="py-2">
 
             @auth
-                @include('components.nav')   
+                @include('components.nav', [ "id" => isset($id) ? $id : 0 ] )   
             @endauth
 
             @include('components.alert')

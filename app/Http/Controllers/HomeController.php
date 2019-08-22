@@ -16,8 +16,9 @@ class HomeController extends Controller
 
     public function index()
     {
+        $id = 1;
         $kpis = Kpi::with('performance')->where('category', 'Crude Oil')->get();
-        return view('home', compact('kpis'));
+        return view('home', compact( 'kpis', 'id' ));
     }
 
     public function show($id)
@@ -25,6 +26,6 @@ class HomeController extends Controller
         $category = Category::find($id);
         $kpis = Kpi::with('performance')->where('category', $category->name)->get();
 
-        return view('home', compact('kpis') );
+        return view('home', compact('kpis', 'id' ) );
     }
 }
