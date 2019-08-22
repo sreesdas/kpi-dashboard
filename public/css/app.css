@@ -10664,6 +10664,18 @@ a.text-dark:focus {
   background: #6b301d;
 }
 
+.bg-50 {
+  background: #e49999;
+}
+
+.bg-99 {
+  background: #fad8a5;
+}
+
+.bg-100 {
+  background: #a0d9ce;
+}
+
 a.list-group-item:hover {
   color: black !important;
 }
@@ -10675,5 +10687,10 @@ a.list-group-item:focus {
 
 a.card-link:hover {
   text-decoration: none;
+}
+
+.square {
+  width: 10px;
+  height: 10px;
 }
 

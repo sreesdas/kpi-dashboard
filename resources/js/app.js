@@ -6,6 +6,9 @@
 
 require('./bootstrap');
 require('./mychart');
+// import Chart from 'chart.js';
+const feather = require('feather-icons');
+feather.replace()
 
 // window.Vue = require('vue');
 

@@ -34,13 +34,13 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link mdi mdi-account h4" href="#"> </a>
+                        <a class="nav-link" href="#"> <i data-feather="user"></i> </a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link mdi mdi-download h4" href="#"></a>
+                        <a class="nav-link" href="#"> <i data-feather="download"></i> </a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link mdi mdi-logout h4" href="#"></a>
+                        <a class="nav-link" href="#"> <i data-feather="log-out"></i> </a>
                     </li>
                 </ul>
             </div>

@@ -84,9 +84,9 @@
                     KPI Dashboard
                 </div>
 
-                <div class="links">
+                {{-- <div class="links">
                     <a href="/dashboard">Checkout</a>
-                </div>
+                </div> --}}
             </div>
         </div>
     </body>

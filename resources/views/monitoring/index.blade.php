@@ -69,8 +69,22 @@
                 
                 <div class="card">
                     <div class="card-body">
-
-                        <h4 class="card-title mb-4" >Key Performance Indicators</h4>
+                        <div class="d-flex justify-content-between">
+                            <h4 class="card-title mb-4" >Key Performance Indicators
+                                <span class="h6 mx-4">
+                                    <span>View By : </span>
+                                    <a class="mx-1" href="#">Monthly</a>
+                                    <a class="mx-1" href="#">Quarterly</a>
+                                    <a class="mx-1" href="#">Half Yearly</a>
+                                    <a class="mx-1" href="#">Annually</a>
+                                </span>
+                            </h4>
+                            <div class="d-flex">
+                                <div class="d-flex align-items-baseline mx-2"> <div class="square bg-50 mx-2"></div> 0% - 50%</div>
+                                <div class="d-flex align-items-baseline mx-2"> <div class="square bg-99 mx-2"></div> 50% - 99%</div>
+                                <div class="d-flex align-items-baseline mx-2"> <div class="square bg-100 mx-2"></div> 99% - 100%</div>
+                            </div>
+                        </div>
 
                         <table class="table table-bordered">
                             <thead>
@@ -103,7 +117,15 @@
                                         <tr>
                                             <td> {{ $kpi->name }} </td>
                                             @foreach ($kpi->performance->pad( 12, $blank ) as $p )
-                                                <td class=" {{ $p->actual == null ? '' : ($p->actual > 2 ? 'bg-success' : 'bg-warning') }}"> {{ $p->actual }} </td>    
+                                                @if( $p->percentage == null )
+                                                    <td> {{ $p->actual }} </td>    
+                                                @elseif( $p->percentage >= 99)
+                                                    <td class="bg-100"> {{ $p->actual }} </td>    
+                                                @elseif( $p->percentage >= 50 )
+                                                    <td class="bg-99"> {{ $p->actual }} </td>    
+                                                @elseif( $p->percentage > 0 )
+                                                    <td class="bg-50"> {{ $p->actual }} </td>    
+                                                @endif
                                             @endforeach
     
                                             <td> {{ $kpi->performance->sum('actual') }} </td>
