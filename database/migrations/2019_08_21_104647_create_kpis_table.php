@@ -16,9 +16,9 @@ class CreateKpisTable extends Migration
         Schema::create('kpis', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('tag'); // tag for context in chart.js and id of canvas (without spaces)
+            $table->string('tag')->unique(); // tag for context in chart.js and id of canvas (without spaces)
             $table->string('category');
-            $table->enum('performance', [ 'monthly', 'quarterly', 'halfyearly', 'yearly' ] );
+            $table->enum( 'frequency', [ 'monthly', 'quarterly', 'halfyearly', 'yearly' ] )->default('monthly');
             $table->string('unit')->nullable();
             $table->double('threshold')->nullable();
             $table->timestamps();

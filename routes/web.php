@@ -7,6 +7,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/test', 'HomeController@test' );
+
 Route::get('/dashboard', 'HomeController@index');
 Route::get('/dashboard/{id}', 'HomeController@show');
 Route::get('/dashboard/{id}/yearly', 'DashboardController@show');

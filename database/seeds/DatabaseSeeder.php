@@ -11,8 +11,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(KpiSeeder::class);
-        $this->call(PerformanceSeeder::class);
+        // $this->call(KpiSeeder::class);
+        // $this->call(PerformanceSeeder::class);
         $this->call(CategorySeeder::class);
     }
 }
