@@ -8,7 +8,7 @@
 
                 <h3 class="card-title mb-4">Create KPI</h3>
 
-                <form action="/kpi/create" method="post">
+                <form action="/kpi" method="post">
                 @csrf
                     <div class="row">
                         <div class="col-6 form-group">

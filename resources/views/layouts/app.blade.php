@@ -25,7 +25,8 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
             <a class="navbar-brand" href="/home">
                 <img src="/img/ongc-logo.png" width="30" height="30" class="d-inline-block align-top mx-2" alt="">
-                {{ config('app.name', 'KPI Dashboard') }} 
+                {{-- {{ config('app.name', 'KPI Dashboard') }}  --}}
+                Vision Tracker - KPI Dashboard
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -50,10 +51,10 @@
                         </div>
                     </li> --}}
                     <li class="nav-item active">
-                        <a class="nav-link" href="#"> <i data-feather="user"></i> </a>
+                    <a class="nav-link" href="/roadmap"> <i data-feather="edit"></i> </a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="/performance/create"> <i data-feather="download"></i> </a>
+                        <a class="nav-link" href="/roadmap/create"> <i data-feather="plus-circle"></i> </a>
                     </li>
                     <li class="nav-item active">
                         <a  class="nav-link" href="{{ route('logout') }}"

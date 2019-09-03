@@ -11,6 +11,7 @@ class MonitoringController extends Controller
 
     public function index()
     {
+        $id=99;
         $ungrouped = Kpi::with('performance')->get();
             
         $blank = Performance::create([
@@ -24,7 +25,7 @@ class MonitoringController extends Controller
     
         $kpis = $ungrouped->groupBy('category');
 
-        return view('monitoring.index2', compact( 'kpis', 'blank' ) );
+        return view('monitoring.index', compact( 'kpis', 'blank', 'id' ) );
     }
 
     public function create()

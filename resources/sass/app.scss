@@ -10,18 +10,18 @@
 .bg-1 {
     background: #10437d;
 }
+// .bg-2 {
+//     background:#0c60c0;
+// }
+// .bg-3 {
+//     background: #2a9fd8;
+// }
 .bg-2 {
-    background:#0c60c0;
-}
-.bg-3 {
-    background: #2a9fd8;
-}
-.bg-4 {
     background: #bb6546;
 }
-.bg-5 {
-    background: #6b301d;
-}
+// .bg-5 {
+//     background: #6b301d;
+// }
 .bg-0 {
     background: black;
 }
@@ -50,18 +50,18 @@ a.list-group-item.current::before {
 a.list-group-item.current-1::before {
     border-color: #10437d transparent transparent transparent;
 }
+// a.list-group-item.current-2::before {
+//     border-color: #0c60c0 transparent transparent transparent;
+// }
+// a.list-group-item.current-3::before {
+//     border-color: #2a9fd8 transparent transparent transparent;
+// }
 a.list-group-item.current-2::before {
-    border-color: #0c60c0 transparent transparent transparent;
-}
-a.list-group-item.current-3::before {
-    border-color: #2a9fd8 transparent transparent transparent;
-}
-a.list-group-item.current-4::before {
     border-color: #bb6546 transparent transparent transparent;
 }
-a.list-group-item.current-5::before {
-    border-color: #6b301d transparent transparent transparent;
-}
+// a.list-group-item.current-5::before {
+//     border-color: #6b301d transparent transparent transparent;
+// }
 a.list-group-item.current-0::before {
     border-color: black transparent transparent transparent;
 }

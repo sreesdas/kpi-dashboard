@@ -3,12 +3,12 @@
 @section('content')
     
 <div class="col-12">
-    <div class="row">
+    <div class="row mb-4">
         @foreach ($kpis as $kpi)
-            <div class="col-4">
+            <div class="col-4 mt-4">
                 <a class="card-link" href="#">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-body shadow-sm">
                             <h5 class="card-title"> {{ $kpi->name }} ( {{ $kpi->unit }}) </h5>
                             <h6 class="card-subtitle mb-2 text-muted">Actual ( 2019-20 ) </h6>
                             @if( $kpi->performance->isNotEmpty() )

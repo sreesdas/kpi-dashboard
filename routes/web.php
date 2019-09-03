@@ -20,8 +20,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/kpi/create', 'KpiController@create' );
-Route::post('/kpi/create', 'KpiController@store' );
-
-Route::get('/performance/create', 'PerformanceController@create');
-Route::post('/performance/create', 'PerformanceController@store');
+Route::resource('/kpi', 'KpiController');
+Route::resource('/performance', 'PerformanceController');
+Route::resource('/roadmap', 'RoadmapController');
